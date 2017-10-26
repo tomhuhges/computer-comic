@@ -1,0 +1,149 @@
+* {
+  font-family: 'Roboto Mono';
+  text-transform: uppercase;
+}
+
+.frame {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*
+.frame__container {
+  filter: url('#squiggle');
+}*/
+
+.text, h1, h3 {
+  color: #cc0066;
+}
+
+
+/*h1:last-of-type {
+  text-align: right;
+  margin-top: 320px;
+}*/
+
+.container {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  will-change: transform;
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateZ(0px)
+  }
+  100% {
+    transform: translateZ(-10px)
+  }
+}
+
+.head {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(to bottom, rgba(200, 0, 100, 0.1), rgba(200, 0, 100, 0.3));
+  border-radius: 50%;
+  perspective: 2000px;
+  position: relative;
+}
+
+.spinner {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  transform-style: preserve-3d;
+}
+
+.face {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  transform: translateZ(145px);
+  backface-visibility: hidden;
+  font-weight: normal;
+  transform-style: preserve-3d;
+}
+
+.nose {
+  transform: rotateX(10deg);
+  transform-origin: top center;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  width: 5%;
+  height: 20%;
+  background: linear-gradient(to bottom, rgba(200, 0, 100, 0), rgba(200, 0, 100, 0.4)); // background: rgba(0,0,255,0.4);
+  border-radius: 0px 0px 9999px 9999px;
+}
+
+.nose::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(200, 0, 100, 0), rgba(200, 0, 100, 0.4)); //background: rgba(0,0,255,0.4);
+  border-radius: 0px 0px 9999px 9999px;
+}
+
+.eye {
+  backface-visibility: hidden;
+  transform: rotateX(10deg) rotateY(-15deg) translateZ(-10px);
+  position: absolute;
+  top: 45%;
+  left: 27.5%;
+  width: 5%;
+  height: 5%;
+  border-radius: 50%;
+  background-color: #cc0066;
+}
+
+.eye-2 {
+  transform: rotateX(10deg) rotateY(15deg) translateZ(-10px);
+  left: 66.7%;
+}
+
+.eyebrow {
+  backface-visibility: hidden;
+  transform: rotateX(10deg) rotateY(-15deg) translateZ(-10px);
+  position: absolute;
+  opacity: 0.2;
+  top: 50%;
+  left: 27%;
+  width: 5%;
+  height: 1%;
+  border-radius: 50%;
+  border-bottom: solid 2px #cc0066;
+}
+
+.eyebrow2 {
+  transform: rotateX(10deg) rotateY(15deg) translateZ(-10px);
+  position: absolute;
+  left: 67%;
+}
+
+.mouth {
+  backface-visibility: hidden;
+  transform: rotateX(-30deg) translateZ(-10px);
+  position: absolute;
+  background: #cc0066;
+  width: 10%;
+  height: 1%;
+  top: 70%;
+  left: 45%;
+}
